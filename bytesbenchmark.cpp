@@ -55,6 +55,7 @@ int main(){
 
         generator();        
         int *randomBytes = new int[TESTING_SIZE];
+        volatile char *holdvalues = new volatile char[TESTING_SIZE];
         //make a loop to make randomBytes have [TESTING_SIZE values] of TESTING_SIZE random ints to access
         for (int w = 0; w < TESTING_SIZE; w++) //This loop may be enough for the prefetcher to preload from the timing section.
         {
@@ -65,21 +66,18 @@ int main(){
         
         for (int32_t k = 0; k < TESTING_SIZE; k++)
         {
-            
-            //volatile char uselessvariable2 = buffer.at(randomBytes[k]);
-            uselessvariable  = buffer[randomBytes[k]]; //if we generate the index randomly right before/in the timing, then the prefetcher can't get it... but it takes absurdly long.
-            //sumint += static_cast<int>(uselessvariable); //Slight worry this is timing not just accessing the memory from buffer, but also static_casting it...
+            holdvalues[k] = buffer[randomBytes[k]]; //if we generate the index randomly right before/in the timing, then the prefetcher can't get it... but it takes absurdly long.
         }
         
         chrono::time_point finish = chrono::high_resolution_clock::now(); //end timing
         meantime = chrono::duration_cast<chrono::nanoseconds>(finish - start).count(); 
         meantime /= TESTING_SIZE;
         cout << bufferSize << "      " << meantime << '\n';
-        //cout << bufferSize << "      " << meantime << "      " << sumint  <<'\n';//printing out the specific sums of each so the sum
         buffer.clear();
         delete[] randomBytes; //gotta free up data
+        delete[] holdvalues;
     }
     //Add a control for outliers by taking the mean when graphing by running 10 times. 
     //May need to explain myself for the random buffer (not big enough, is constant enough over the testings)
-    return(0);
+    return 0;
 } 
