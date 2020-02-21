@@ -3,17 +3,31 @@
 //Wanted to do C arrays, but breaks aftter 2^22
 const int BUFFER_POWER_MIN = 10; //1024;
 const int BUFFER_POWER_MAX = 26; //67108864;
-const int TESTING_SIZE =  1000; //Should take around 4k bytes from cache, which should be fine?
+int TESTING_SIZE =  1000; //Should take around 4k bytes from cache, which should be fine?
 
-void init_buffer(int bufferSize, default_random_engine& generator, vector<char>& buffer){
+void init_buffer(int bufferSize, default_random_engine& generator, vector<int>& buffer){
     //init with random characters
     generator();
-    uniform_int_distribution<> distribution(33, 126);
-    for (int i = 0; i < bufferSize; i++)
-    {
-        char value = distribution(generator); //should give character of ascii value fron generator
-        buffer.push_back(value); //Should keep things contiguous?
+    uniform_int_distribution<> distribution(0, bufferSize-1);
+    for (int i = 0; i < bufferSize-1; i++)
+    {        
+        
+        buffer.push_back(i); //Should keep things contiguous?
     }
+    for (int j = 0; j < bufferSize-1; j++)
+    {
+        int k =j + distribution(generator) % (bufferSize -j);
+        while (k == j)
+        {
+            k =j + distribution(generator) % (bufferSize -j);
+        }
+        
+        swap(buffer[j], buffer[k]);
+    }
+    //random_shuffle(buffer.begin(), buffer.end());
+    //shuffle(buffer.begin(), buffer.end(), generator()); //Initialize then make things random
+    //shuffle an array manually takes one for loop
+
     //The buffer is being changed here
 }
 
@@ -23,10 +37,10 @@ int main(){
     //Init an array of chars as a char is a perfect byte in this context
 
     //default_random_engine generator; //Assuming we don't seed this thing
-    cout <<"# Bytes:" <<  "      " << "Time of one byte: \n";
+    cout <<"# Bytes:" <<  "\t" << "Time of one byte (nanoseconds):" << "\t " << "Useless printout: \n";
     //For first 100 times at a given buffer size, pull a random index so its forced to use a random size. not timed.
     //THEN we start timing, try accessing another random point (determined before start), time it, print that. 
-    vector<char> buffer;
+    vector<int> buffer;
     default_random_engine generator; //Assuming we don't seed this thing
     for (int i = BUFFER_POWER_MIN; i <= BUFFER_POWER_MAX; i++)
     {   
@@ -37,14 +51,14 @@ int main(){
         //then, access random iterations for enough time that the computer puts the buffer in L1 category
         int sumint = 0;
         int randomByte = 0;
-        volatile char uselessvariable = 'a';
-        //Trying to put things into L1 here.
+        volatile int uselessvariable = 0;
+        //Trying to put things into L1 here. I COULD just effectively copy the same logic used below, with the timed section and get rid of some ints... but I liked the numbers I got from this system better.
         for (int32_t j = 0; j < TESTING_SIZE; j++) //Caches work in sections of 64 bytes, so should access at least 1 out of every 64 bytes in fector
         {
             randomByte = byteDistribution(generator);
             //Read a byte
             uselessvariable = buffer[randomByte]; //Time how long it takes to get buffer access here?
-            sumint += static_cast<int>(uselessvariable); 
+            sumint += uselessvariable; 
             //volatile doesn't nessicarilly keep the thing
             //How to read a byte and assure it's not in L1? This is an L2 issue needed to be figured out. 
             // try to infer size of cache. 
@@ -53,31 +67,23 @@ int main(){
         }
         double meantime = 0.0; 
 
-        generator();        
-        int *randomBytes = new int[TESTING_SIZE];
-        volatile char *holdvalues = new volatile char[TESTING_SIZE];
-        //make a loop to make randomBytes have [TESTING_SIZE values] of TESTING_SIZE random ints to access
-        for (int w = 0; w < TESTING_SIZE; w++) //This loop may be enough for the prefetcher to preload from the timing section.
-        {
-            randomBytes[w] = byteDistribution(generator);
-        }
-        
+        int randomByteInt=0;
         chrono::time_point start = chrono::high_resolution_clock::now(); //start timing 
         
         for (int32_t k = 0; k < TESTING_SIZE; k++)
         {
-            holdvalues[k] = buffer[randomBytes[k]]; //if we generate the index randomly right before/in the timing, then the prefetcher can't get it... but it takes absurdly long.
+            //Writing might be taking longer, but since we init the buffer with indecides into itself and shifted them, we should be getting random things.
+            randomByteInt = buffer[randomByteInt];
         }
         
         chrono::time_point finish = chrono::high_resolution_clock::now(); //end timing
-        meantime = chrono::duration_cast<chrono::nanoseconds>(finish - start).count(); 
+        meantime = chrono::duration_cast<chrono::microseconds>(finish - start).count(); 
+        meantime *= 1000; //gotta make it nanoseconds
         meantime /= TESTING_SIZE;
-        cout << bufferSize << "      " << meantime << '\n';
+        cout << bufferSize << "\t" << meantime << "\t"<<  randomByteInt << "\t" <<'\n';  //printing out the randomByteInt so the optimizer doesn't toss it.
         buffer.clear();
-        delete[] randomBytes; //gotta free up data
-        delete[] holdvalues;
+        TESTING_SIZE = TESTING_SIZE * 2;
     }
     //Add a control for outliers by taking the mean when graphing by running 10 times. 
-    //May need to explain myself for the random buffer (not big enough, is constant enough over the testings)
     return 0;
 } 

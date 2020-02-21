@@ -1,1253 +1,1033 @@
-	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 10, 15	sdk_version 10, 15
-	.globl	__Z11init_bufferiRNSt3__126linear_congruential_engineIjLj48271ELj0ELj2147483647EEERNS_6vectorIcNS_9allocatorIcEEEE ## -- Begin function _Z11init_bufferiRNSt3__126linear_congruential_engineIjLj48271ELj0ELj2147483647EEERNS_6vectorIcNS_9allocatorIcEEEE
-	.p2align	4, 0x90
-__Z11init_bufferiRNSt3__126linear_congruential_engineIjLj48271ELj0ELj2147483647EEERNS_6vectorIcNS_9allocatorIcEEEE: ## @_Z11init_bufferiRNSt3__126linear_congruential_engineIjLj48271ELj0ELj2147483647EEERNS_6vectorIcNS_9allocatorIcEEEE
+	.file	"bytesbenchmark.cpp"
+	.text
+	.section	.text._ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_,"axG",@progbits,_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_,comdat
+	.align 2
+	.p2align 4,,15
+	.weak	_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_
+	.type	_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_, @function
+_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_:
+.LFB4154:
 	.cfi_startproc
-## %bb.0:
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register %rbp
 	pushq	%r15
+	.cfi_def_cfa_offset 16
+	.cfi_offset 15, -16
+	movq	%rdx, %r15
+	movq	%rsi, %rdx
 	pushq	%r14
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
 	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	movq	%rdi, %r13
 	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	movq	%rsi, %r12
+	pushq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
 	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
 	subq	$40, %rsp
-	.cfi_offset %rbx, -56
-	.cfi_offset %r12, -48
-	.cfi_offset %r13, -40
-	.cfi_offset %r14, -32
-	.cfi_offset %r15, -24
-	movq	%rdx, %rbx
-	movl	(%rsi), %eax
-	movl	$3163493265, %ecx       ## imm = 0xBC8F1391
-	imulq	%rax, %rcx
-	shrq	$47, %rcx
-	imull	$44488, %ecx, %edx      ## imm = 0xADC8
-	subl	%edx, %eax
-	imull	$48271, %eax, %eax      ## imm = 0xBC8F
-	imull	$3399, %ecx, %ecx       ## imm = 0xD47
-	xorl	%r13d, %r13d
-	subl	%ecx, %eax
-	movl	$2147483647, %ecx       ## imm = 0x7FFFFFFF
-	cmovael	%r13d, %ecx
-	addl	%eax, %ecx
-	movl	%ecx, (%rsi)
-	movabsq	$523986010209, %rax     ## imm = 0x7A00000061
-	movq	%rax, -72(%rbp)
-	testl	%edi, %edi
-	jle	LBB0_14
-## %bb.1:
-	movq	%rsi, %r14
-	movl	%edi, %r12d
-	movq	%rsi, -64(%rbp)         ## 8-byte Spill
-	movl	%edi, -44(%rbp)         ## 4-byte Spill
-	movq	%rbx, -56(%rbp)         ## 8-byte Spill
-	jmp	LBB0_2
-LBB0_7:                                 ##   in Loop: Header=BB0_2 Depth=1
-	xorl	%r12d, %r12d
-	xorl	%r14d, %r14d
-	jmp	LBB0_9
-	.p2align	4, 0x90
-LBB0_2:                                 ## =>This Inner Loop Header: Depth=1
-	leaq	-72(%rbp), %rdi
-	movq	%r14, %rsi
-	movq	%rdi, %rdx
-	callq	__ZNSt3__124uniform_int_distributionIiEclINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEEEiRT_RKNS1_10param_typeE
-	movl	%eax, %edi
-	movq	8(%rbx), %r15
-	movq	16(%rbx), %rax
-	cmpq	%rax, %r15
-	je	LBB0_4
-## %bb.3:                               ##   in Loop: Header=BB0_2 Depth=1
-	movb	%dil, (%r15)
-	incq	8(%rbx)
-	incl	%r13d
-	cmpl	%r12d, %r13d
-	jl	LBB0_2
-	jmp	LBB0_14
-	.p2align	4, 0x90
-LBB0_4:                                 ##   in Loop: Header=BB0_2 Depth=1
-	movq	(%rbx), %rsi
-	subq	%rsi, %r15
-	movq	%r15, %rcx
-	incq	%rcx
-	js	LBB0_15
-## %bb.5:                               ##   in Loop: Header=BB0_2 Depth=1
-	subq	%rsi, %rax
-	movabsq	$9223372036854775807, %r12 ## imm = 0x7FFFFFFFFFFFFFFF
-	movabsq	$4611686018427387902, %rdx ## imm = 0x3FFFFFFFFFFFFFFE
-	cmpq	%rdx, %rax
-	ja	LBB0_8
-## %bb.6:                               ##   in Loop: Header=BB0_2 Depth=1
-	addq	%rax, %rax
-	cmpq	%rcx, %rax
-	cmovbq	%rcx, %rax
-	movq	%rax, %r12
-	testq	%rax, %rax
-	je	LBB0_7
-LBB0_8:                                 ##   in Loop: Header=BB0_2 Depth=1
-	movl	%edi, %r14d
-	movq	%r12, %rdi
-	movq	%rsi, %rbx
-	callq	__Znwm
-	movl	%r14d, %edi
-	movq	%rbx, %rsi
-	movq	%rax, %r14
-LBB0_9:                                 ##   in Loop: Header=BB0_2 Depth=1
-	addq	%r14, %r12
-	movb	%dil, (%r14,%r15)
-	leaq	1(%r14,%r15), %rax
-	testq	%r15, %r15
-	jle	LBB0_11
-## %bb.10:                              ##   in Loop: Header=BB0_2 Depth=1
-	movq	%r14, %rdi
-	movq	%rsi, %rbx
-	movq	%r15, %rdx
-	movq	%rax, %r15
-	callq	_memcpy
-	movq	%r15, %rax
-	movq	%rbx, %rsi
-LBB0_11:                                ##   in Loop: Header=BB0_2 Depth=1
-	movq	-56(%rbp), %rbx         ## 8-byte Reload
-	movq	%r14, (%rbx)
-	movq	%rax, 8(%rbx)
-	movq	%r12, 16(%rbx)
-	testq	%rsi, %rsi
-	movq	-64(%rbp), %r14         ## 8-byte Reload
-	movl	-44(%rbp), %r12d        ## 4-byte Reload
-	je	LBB0_13
-## %bb.12:                              ##   in Loop: Header=BB0_2 Depth=1
-	movq	%rsi, %rdi
-	callq	__ZdlPv
-LBB0_13:                                ##   in Loop: Header=BB0_2 Depth=1
-	incl	%r13d
-	cmpl	%r12d, %r13d
-	jl	LBB0_2
-LBB0_14:
-	addq	$40, %rsp
-	popq	%rbx
-	popq	%r12
-	popq	%r13
-	popq	%r14
-	popq	%r15
-	popq	%rbp
-	retq
-LBB0_15:
-	movq	%rbx, %rdi
-	callq	__ZNKSt3__120__vector_base_commonILb1EE20__throw_length_errorEv
-	.cfi_endproc
-                                        ## -- End function
-	.section	__TEXT,__literal8,8byte_literals
-	.p2align	3               ## -- Begin function main
-LCPI1_0:
-	.quad	4607182418800017408     ## double 1
-	.section	__TEXT,__text,regular,pure_instructions
-	.globl	_main
-	.p2align	4, 0x90
-_main:                                  ## @main
-Lfunc_begin0:
-	.cfi_startproc
-	.cfi_personality 155, ___gxx_personality_v0
-	.cfi_lsda 16, Lexception0
-## %bb.0:
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register %rbp
-	pushq	%r15
-	pushq	%r14
-	pushq	%r13
-	pushq	%r12
-	pushq	%rbx
-	subq	$88, %rsp
-	.cfi_offset %rbx, -56
-	.cfi_offset %r12, -48
-	.cfi_offset %r13, -40
-	.cfi_offset %r14, -32
-	.cfi_offset %r15, -24
-	movq	___stack_chk_guard@GOTPCREL(%rip), %rax
-	movq	(%rax), %rax
-	movq	%rax, -48(%rbp)
-	movl	$1, -88(%rbp)
-	movq	__ZNSt3__14coutE@GOTPCREL(%rip), %rdi
-	leaq	L_.str(%rip), %rsi
-	movl	$5, %edx
-	callq	__ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m
-	leaq	L_.str.1(%rip), %rsi
-	movl	$6, %edx
-	movq	%rax, %rdi
-	callq	__ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m
-	leaq	L_.str.2(%rip), %rsi
-	movl	$7, %edx
-	movq	%rax, %rdi
-	callq	__ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m
-	xorpd	%xmm0, %xmm0
-	movapd	%xmm0, -80(%rbp)
-	movq	$0, -64(%rbp)
-	movl	_BUFFER_POWER_MIN(%rip), %edi
-	cmpl	_BUFFER_POWER_MAX(%rip), %edi
-	jg	LBB1_11
-## %bb.1:
-	leaq	-88(%rbp), %r12
-	leaq	-96(%rbp), %r14
-	.p2align	4, 0x90
-LBB1_2:                                 ## =>This Loop Header: Depth=1
-                                        ##     Child Loop BB1_5 Depth 2
-                                        ##     Child Loop BB1_16 Depth 2
-                                        ##     Child Loop BB1_20 Depth 2
-	movsd	LCPI1_0(%rip), %xmm0    ## xmm0 = mem[0],zero
-	movq	%rdi, -128(%rbp)        ## 8-byte Spill
-                                        ## kill: def $edi killed $edi killed $rdi
-	callq	_ldexp
-	cvttsd2si	%xmm0, %r15d
-Ltmp0:
-	movl	%r15d, %edi
-	movq	%r12, %rsi
-	leaq	-80(%rbp), %rdx
-	callq	__Z11init_bufferiRNSt3__126linear_congruential_engineIjLj48271ELj0ELj2147483647EEERNS_6vectorIcNS_9allocatorIcEEEE
-Ltmp1:
-## %bb.3:                               ##   in Loop: Header=BB1_2 Depth=1
-	leal	-1(%r15), %eax
-	movl	$0, -96(%rbp)
-	movl	%eax, -92(%rbp)
-	testl	%r15d, %r15d
-	jle	LBB1_14
-## %bb.4:                               ##   in Loop: Header=BB1_2 Depth=1
-	xorl	%ebx, %ebx
-	.p2align	4, 0x90
-LBB1_5:                                 ##   Parent Loop BB1_2 Depth=1
-                                        ## =>  This Inner Loop Header: Depth=2
-Ltmp3:
-	movq	%r14, %rdi
-	movq	%r12, %rsi
-	movq	%r14, %rdx
-	callq	__ZNSt3__124uniform_int_distributionIiEclINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEEEiRT_RKNS1_10param_typeE
-Ltmp4:
-## %bb.6:                               ##   in Loop: Header=BB1_5 Depth=2
-	cltq
-	movq	-80(%rbp), %rcx
-	movq	-72(%rbp), %rdx
-	subq	%rcx, %rdx
-	cmpq	%rax, %rdx
-	jbe	LBB1_7
-## %bb.13:                              ##   in Loop: Header=BB1_5 Depth=2
-	movzbl	(%rcx,%rax), %eax
-	movb	%al, -49(%rbp)
-	incl	%ebx
-	cmpl	%r15d, %ebx
-	jl	LBB1_5
-LBB1_14:                                ##   in Loop: Header=BB1_2 Depth=1
-	movq	%rsp, -120(%rbp)        ## 8-byte Spill
-	movl	_testingSize(%rip), %eax
-	leaq	15(,%rax,4), %rax
-	andq	$-16, %rax
-	callq	____chkstk_darwin
-	subq	%rax, %rsp
-	movq	%rsp, %r13
-	cmpl	$0, _testingSize(%rip)
-	jle	LBB1_18
-## %bb.15:                              ##   in Loop: Header=BB1_2 Depth=1
-	xorl	%ebx, %ebx
-	.p2align	4, 0x90
-LBB1_16:                                ##   Parent Loop BB1_2 Depth=1
-                                        ## =>  This Inner Loop Header: Depth=2
-Ltmp9:
-	movq	%r14, %rdi
-	movq	%r12, %rsi
-	movq	%r14, %rdx
-	callq	__ZNSt3__124uniform_int_distributionIiEclINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEEEiRT_RKNS1_10param_typeE
-Ltmp10:
-## %bb.17:                              ##   in Loop: Header=BB1_16 Depth=2
-	movl	%eax, (%r13,%rbx,4)
-	incq	%rbx
-	movslq	_testingSize(%rip), %rax
-	cmpq	%rax, %rbx
-	jl	LBB1_16
-LBB1_18:                                ##   in Loop: Header=BB1_2 Depth=1
-	callq	__ZNSt3__16chrono12steady_clock3nowEv
-	movq	%rax, -112(%rbp)        ## 8-byte Spill
-	movslq	_testingSize(%rip), %rcx
-	testq	%rcx, %rcx
-	jle	LBB1_27
-## %bb.19:                              ##   in Loop: Header=BB1_2 Depth=1
-	movq	-80(%rbp), %rsi
-	movq	-72(%rbp), %rdi
-	subq	%rsi, %rdi
-	xorl	%ebx, %ebx
-	.p2align	4, 0x90
-LBB1_20:                                ##   Parent Loop BB1_2 Depth=1
-                                        ## =>  This Inner Loop Header: Depth=2
-	movslq	(%r13,%rbx,4), %rax
-	cmpq	%rax, %rdi
-	jbe	LBB1_21
-## %bb.26:                              ##   in Loop: Header=BB1_20 Depth=2
-	movzbl	(%rsi,%rax), %eax
-	movb	%al, -49(%rbp)
-	incq	%rbx
-	cmpq	%rcx, %rbx
-	jl	LBB1_20
-LBB1_27:                                ##   in Loop: Header=BB1_2 Depth=1
-	callq	__ZNSt3__16chrono12steady_clock3nowEv
-	movq	%rax, %r13
-	xorps	%xmm0, %xmm0
-	cvtsi2sdl	_testingSize(%rip), %xmm0
-	movsd	%xmm0, -104(%rbp)       ## 8-byte Spill
-Ltmp15:
-	movq	__ZNSt3__14coutE@GOTPCREL(%rip), %rdi
-	movl	%r15d, %esi
-	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi
-Ltmp16:
-## %bb.28:                              ##   in Loop: Header=BB1_2 Depth=1
-Ltmp17:
-	movl	$6, %edx
-	movq	%rax, %rdi
-	leaq	L_.str.1(%rip), %rsi
-	callq	__ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m
-Ltmp18:
-## %bb.29:                              ##   in Loop: Header=BB1_2 Depth=1
-	subq	-112(%rbp), %r13        ## 8-byte Folded Reload
-	xorps	%xmm0, %xmm0
-	cvtsi2sdq	%r13, %xmm0
-	divsd	-104(%rbp), %xmm0       ## 8-byte Folded Reload
-Ltmp19:
-	movq	%rax, %rdi
-	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEd
-Ltmp20:
-## %bb.30:                              ##   in Loop: Header=BB1_2 Depth=1
-	movb	$10, -49(%rbp)
-Ltmp21:
-	movl	$1, %edx
-	movq	%rax, %rdi
-	leaq	-49(%rbp), %rsi
-	callq	__ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m
-Ltmp22:
-## %bb.31:                              ##   in Loop: Header=BB1_2 Depth=1
-	movq	-120(%rbp), %rsp        ## 8-byte Reload
-	movq	-80(%rbp), %rax
-	movq	%rax, -72(%rbp)
-	movq	-128(%rbp), %rcx        ## 8-byte Reload
-	leal	1(%rcx), %eax
-	cmpl	_BUFFER_POWER_MAX(%rip), %ecx
-	movl	%eax, %edi
-	jl	LBB1_2
-## %bb.9:
-	movq	-80(%rbp), %rdi
-	testq	%rdi, %rdi
-	je	LBB1_11
-## %bb.10:
-	movq	%rdi, -72(%rbp)
-	callq	__ZdlPv
-LBB1_11:
-	movq	___stack_chk_guard@GOTPCREL(%rip), %rax
-	movq	(%rax), %rax
-	cmpq	-48(%rbp), %rax
-	jne	LBB1_36
-## %bb.12:
-	xorl	%eax, %eax
-	leaq	-40(%rbp), %rsp
-	popq	%rbx
-	popq	%r12
-	popq	%r13
-	popq	%r14
-	popq	%r15
-	popq	%rbp
-	retq
-LBB1_36:
-	callq	___stack_chk_fail
-LBB1_7:
-Ltmp6:
-	leaq	-80(%rbp), %rdi
-	callq	__ZNKSt3__120__vector_base_commonILb1EE20__throw_out_of_rangeEv
-Ltmp7:
-	jmp	LBB1_8
-LBB1_21:
-Ltmp12:
-	leaq	-80(%rbp), %rdi
-	callq	__ZNKSt3__120__vector_base_commonILb1EE20__throw_out_of_rangeEv
-Ltmp13:
-LBB1_8:
-	ud2
-LBB1_25:
-Ltmp14:
-	movq	%rax, %rbx
-	movq	-80(%rbp), %rdi
-	testq	%rdi, %rdi
-	jne	LBB1_34
-	jmp	LBB1_35
-LBB1_24:
-Ltmp8:
-	movq	%rax, %rbx
-	movq	-80(%rbp), %rdi
-	testq	%rdi, %rdi
-	jne	LBB1_34
-	jmp	LBB1_35
-LBB1_22:
-Ltmp2:
-	movq	%rax, %rbx
-	movq	-80(%rbp), %rdi
-	testq	%rdi, %rdi
-	jne	LBB1_34
-	jmp	LBB1_35
-LBB1_32:
-Ltmp23:
-	movq	%rax, %rbx
-	movq	-80(%rbp), %rdi
-	testq	%rdi, %rdi
-	jne	LBB1_34
-	jmp	LBB1_35
-LBB1_37:
-Ltmp11:
-	movq	%rax, %rbx
-	movq	-80(%rbp), %rdi
-	testq	%rdi, %rdi
-	jne	LBB1_34
-	jmp	LBB1_35
-LBB1_23:
-Ltmp5:
-	movq	%rax, %rbx
-	movq	-80(%rbp), %rdi
-	testq	%rdi, %rdi
-	je	LBB1_35
-LBB1_34:
-	movq	%rdi, -72(%rbp)
-	callq	__ZdlPv
-LBB1_35:
-	movq	%rbx, %rdi
-	callq	__Unwind_Resume
-	ud2
-Lfunc_end0:
-	.cfi_endproc
-	.section	__TEXT,__gcc_except_tab
-	.p2align	2
-GCC_except_table1:
-Lexception0:
-	.byte	255                     ## @LPStart Encoding = omit
-	.byte	255                     ## @TType Encoding = omit
-	.byte	1                       ## Call site Encoding = uleb128
-	.uleb128 Lcst_end0-Lcst_begin0
-Lcst_begin0:
-	.uleb128 Lfunc_begin0-Lfunc_begin0 ## >> Call Site 1 <<
-	.uleb128 Ltmp0-Lfunc_begin0     ##   Call between Lfunc_begin0 and Ltmp0
-	.byte	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
-	.uleb128 Ltmp0-Lfunc_begin0     ## >> Call Site 2 <<
-	.uleb128 Ltmp1-Ltmp0            ##   Call between Ltmp0 and Ltmp1
-	.uleb128 Ltmp2-Lfunc_begin0     ##     jumps to Ltmp2
-	.byte	0                       ##   On action: cleanup
-	.uleb128 Ltmp3-Lfunc_begin0     ## >> Call Site 3 <<
-	.uleb128 Ltmp4-Ltmp3            ##   Call between Ltmp3 and Ltmp4
-	.uleb128 Ltmp5-Lfunc_begin0     ##     jumps to Ltmp5
-	.byte	0                       ##   On action: cleanup
-	.uleb128 Ltmp4-Lfunc_begin0     ## >> Call Site 4 <<
-	.uleb128 Ltmp9-Ltmp4            ##   Call between Ltmp4 and Ltmp9
-	.byte	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
-	.uleb128 Ltmp9-Lfunc_begin0     ## >> Call Site 5 <<
-	.uleb128 Ltmp10-Ltmp9           ##   Call between Ltmp9 and Ltmp10
-	.uleb128 Ltmp11-Lfunc_begin0    ##     jumps to Ltmp11
-	.byte	0                       ##   On action: cleanup
-	.uleb128 Ltmp15-Lfunc_begin0    ## >> Call Site 6 <<
-	.uleb128 Ltmp22-Ltmp15          ##   Call between Ltmp15 and Ltmp22
-	.uleb128 Ltmp23-Lfunc_begin0    ##     jumps to Ltmp23
-	.byte	0                       ##   On action: cleanup
-	.uleb128 Ltmp22-Lfunc_begin0    ## >> Call Site 7 <<
-	.uleb128 Ltmp6-Ltmp22           ##   Call between Ltmp22 and Ltmp6
-	.byte	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
-	.uleb128 Ltmp6-Lfunc_begin0     ## >> Call Site 8 <<
-	.uleb128 Ltmp7-Ltmp6            ##   Call between Ltmp6 and Ltmp7
-	.uleb128 Ltmp8-Lfunc_begin0     ##     jumps to Ltmp8
-	.byte	0                       ##   On action: cleanup
-	.uleb128 Ltmp12-Lfunc_begin0    ## >> Call Site 9 <<
-	.uleb128 Ltmp13-Ltmp12          ##   Call between Ltmp12 and Ltmp13
-	.uleb128 Ltmp14-Lfunc_begin0    ##     jumps to Ltmp14
-	.byte	0                       ##   On action: cleanup
-	.uleb128 Ltmp13-Lfunc_begin0    ## >> Call Site 10 <<
-	.uleb128 Lfunc_end0-Ltmp13      ##   Call between Ltmp13 and Lfunc_end0
-	.byte	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
-Lcst_end0:
-	.p2align	2
-                                        ## -- End function
-	.section	__TEXT,__literal16,16byte_literals
-	.p2align	4               ## -- Begin function _ZNSt3__124uniform_int_distributionIiEclINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEEEiRT_RKNS1_10param_typeE
-LCPI2_0:
-	.quad	32                      ## 0x20
-	.quad	16                      ## 0x10
-LCPI2_1:
-	.quad	2                       ## 0x2
-	.quad	2                       ## 0x2
-LCPI2_2:
-	.long	2147418112              ## 0x7fff0000
-	.long	2147352576              ## 0x7ffe0000
-	.long	65535                   ## 0xffff
-	.long	131071                  ## 0x1ffff
-	.section	__TEXT,__text,regular,pure_instructions
-	.globl	__ZNSt3__124uniform_int_distributionIiEclINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEEEiRT_RKNS1_10param_typeE
-	.weak_def_can_be_hidden	__ZNSt3__124uniform_int_distributionIiEclINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEEEiRT_RKNS1_10param_typeE
-	.p2align	4, 0x90
-__ZNSt3__124uniform_int_distributionIiEclINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEEEiRT_RKNS1_10param_typeE: ## @_ZNSt3__124uniform_int_distributionIiEclINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEEEiRT_RKNS1_10param_typeE
-	.cfi_startproc
-## %bb.0:
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register %rbp
-	pushq	%r15
-	pushq	%r14
-	pushq	%rbx
-	subq	$56, %rsp
-	.cfi_offset %rbx, -40
-	.cfi_offset %r14, -32
-	.cfi_offset %r15, -24
-	movl	(%rdx), %eax
-	movl	4(%rdx), %r15d
-	subl	%eax, %r15d
-	je	LBB2_13
-## %bb.1:
-	incl	%r15d
-	je	LBB2_2
-## %bb.3:
-	movq	%rdx, %r14
-	bsrl	%r15d, %eax
-	xorl	$31, %eax
-	movl	$32, %edi
-	subq	%rax, %rdi
-	movb	$33, %cl
-	subb	%dil, %cl
-	movl	%r15d, %eax
-	shll	%cl, %eax
-	shrl	%cl, %eax
-	cmpl	$1, %eax
-	sbbq	$0, %rdi
-	movq	%rsi, -80(%rbp)
-	movq	%rdi, -72(%rbp)
-	movabsq	$-8608480567731124087, %rcx ## imm = 0x8888888888888889
-	movq	%rdi, %rax
-	mulq	%rcx
-	shrq	$4, %rdx
-	movq	%rdx, %rax
-	shlq	$5, %rax
-	movq	%rdx, %rcx
-	subq	%rax, %rcx
-	addq	%rdx, %rcx
-	xorl	%ebx, %ebx
-	addq	%rdi, %rcx
-	setne	%bl
-	addq	%rdx, %rbx
-	movq	%rbx, -56(%rbp)
-	xorl	%r8d, %r8d
-	movq	%rdi, %rax
-	xorl	%edx, %edx
-	divq	%rbx
-	movq	%rax, %r9
-	movq	%rax, -64(%rbp)
-	movl	$2147483646, %eax       ## imm = 0x7FFFFFFE
-	movl	%r9d, %ecx
-	shrl	%cl, %eax
-	movl	$2147483646, %esi       ## imm = 0x7FFFFFFE
-	shll	%cl, %eax
-	cmpq	$32, %r9
-	cmovael	%r8d, %eax
-	movl	%eax, -40(%rbp)
-	subl	%eax, %esi
-	xorl	%edx, %edx
-	divq	%rbx
-	cmpq	%rsi, %rax
-	jae	LBB2_6
-## %bb.4:
-	incq	%rbx
-	movq	%rbx, -56(%rbp)
-	movq	%rdi, %rax
-	xorl	%edx, %edx
-	divq	%rbx
-	movq	%rax, %r9
-	movq	%rax, -64(%rbp)
-	cmpq	$31, %rax
-	ja	LBB2_8
-## %bb.5:
-	movl	$2147483646, %eax       ## imm = 0x7FFFFFFE
-	movl	%r9d, %ecx
-	shrl	%cl, %eax
-	shll	%cl, %eax
-	movl	%eax, -40(%rbp)
-LBB2_6:
-	movq	%rdi, %rax
-	xorl	%edx, %edx
-	divq	%rbx
-	subq	%rdx, %rbx
-	movq	%rbx, -48(%rbp)
-	cmpq	$30, %r9
-	ja	LBB2_9
-## %bb.7:
-	movl	%r9d, %ecx
-	incb	%cl
-	movl	$2147483646, %eax       ## imm = 0x7FFFFFFE
-	shrl	%cl, %eax
-	shll	%cl, %eax
-	movl	%eax, -36(%rbp)
-	movb	$1, %al
-	jmp	LBB2_10
-LBB2_2:
-	movq	%rsi, -80(%rbp)
-	movaps	LCPI2_0(%rip), %xmm0    ## xmm0 = [32,16]
-	movups	%xmm0, -72(%rbp)
-	movaps	LCPI2_1(%rip), %xmm0    ## xmm0 = [2,2]
-	movups	%xmm0, -56(%rbp)
-	movaps	LCPI2_2(%rip), %xmm0    ## xmm0 = [2147418112,2147352576,65535,131071]
-	movups	%xmm0, -40(%rbp)
-	leaq	-80(%rbp), %rdi
-	callq	__ZNSt3__125__independent_bits_engineINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEjE6__evalENS_17integral_constantIbLb1EEE
-	jmp	LBB2_13
-LBB2_8:
-	movl	$0, -40(%rbp)
-	subq	%rdx, %rbx
-	movq	%rbx, -48(%rbp)
-LBB2_9:
-	movl	$0, -36(%rbp)
-	xorl	%eax, %eax
-LBB2_10:
-	movl	%r9d, %ecx
-	negb	%cl
-	movl	$-1, %edx
-	movl	$-1, %esi
-	shrl	%cl, %esi
-	xorl	%ecx, %ecx
-	testq	%r9, %r9
-	cmovnel	%esi, %ecx
-	movl	%ecx, -32(%rbp)
-	movb	$31, %cl
-	subb	%r9b, %cl
-	movl	$-1, %esi
-	shrl	%cl, %esi
-	testb	%al, %al
-	cmovel	%edx, %esi
-	movl	%esi, -28(%rbp)
-	leaq	-80(%rbp), %rbx
-	.p2align	4, 0x90
-LBB2_11:                                ## =>This Inner Loop Header: Depth=1
-	movq	%rbx, %rdi
-	callq	__ZNSt3__125__independent_bits_engineINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEjE6__evalENS_17integral_constantIbLb1EEE
-	cmpl	%r15d, %eax
-	jae	LBB2_11
-## %bb.12:
-	addl	(%r14), %eax
-LBB2_13:
-	addq	$56, %rsp
-	popq	%rbx
-	popq	%r14
-	popq	%r15
-	popq	%rbp
-	retq
-	.cfi_endproc
-                                        ## -- End function
-	.globl	__ZNSt3__125__independent_bits_engineINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEjE6__evalENS_17integral_constantIbLb1EEE ## -- Begin function _ZNSt3__125__independent_bits_engineINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEjE6__evalENS_17integral_constantIbLb1EEE
-	.weak_def_can_be_hidden	__ZNSt3__125__independent_bits_engineINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEjE6__evalENS_17integral_constantIbLb1EEE
-	.p2align	4, 0x90
-__ZNSt3__125__independent_bits_engineINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEjE6__evalENS_17integral_constantIbLb1EEE: ## @_ZNSt3__125__independent_bits_engineINS_26linear_congruential_engineIjLj48271ELj0ELj2147483647EEEjE6__evalENS_17integral_constantIbLb1EEE
-	.cfi_startproc
-## %bb.0:
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register %rbp
-	pushq	%r15
-	pushq	%r14
-	pushq	%r12
-	pushq	%rbx
-	.cfi_offset %rbx, -48
-	.cfi_offset %r12, -40
-	.cfi_offset %r14, -32
-	.cfi_offset %r15, -24
-	movq	32(%rdi), %r10
-	testq	%r10, %r10
-	je	LBB3_1
-## %bb.2:
-	movq	(%rdi), %r8
-	movq	16(%rdi), %rcx
-	movl	40(%rdi), %r12d
-	movl	48(%rdi), %r9d
-	movl	(%r8), %edx
-	cmpq	$32, %rcx
-	jae	LBB3_3
-## %bb.7:
-	xorl	%eax, %eax
-	movl	$3163493265, %r11d      ## imm = 0xBC8F1391
-	movl	$2147483647, %r15d      ## imm = 0x7FFFFFFF
-	xorl	%r14d, %r14d
-	.p2align	4, 0x90
-LBB3_8:                                 ## =>This Inner Loop Header: Depth=1
-	movl	%edx, %ebx
-	imulq	%r11, %rbx
-	shrq	$47, %rbx
-	imull	$44488, %ebx, %esi      ## imm = 0xADC8
-	subl	%esi, %edx
-	imull	$48271, %edx, %esi      ## imm = 0xBC8F
-	imull	$3399, %ebx, %edx       ## imm = 0xD47
-	subl	%edx, %esi
-	movl	$0, %ebx
-	cmovbl	%r15d, %ebx
-	leal	(%rbx,%rsi), %edx
-	leal	-1(%rbx,%rsi), %ebx
-	cmpl	%r12d, %ebx
-	jae	LBB3_8
-## %bb.9:                               ##   in Loop: Header=BB3_8 Depth=1
-	shll	%cl, %eax
-	andl	%r9d, %ebx
-	addl	%ebx, %eax
-	incq	%r14
-	cmpq	%r10, %r14
-	jb	LBB3_8
-	jmp	LBB3_10
-LBB3_1:
-	xorl	%eax, %eax
-	movq	24(%rdi), %r9
-	cmpq	%r9, %r10
-	jb	LBB3_12
-	jmp	LBB3_21
-LBB3_3:
-	xorl	%r11d, %r11d
-	movl	$3163493265, %ecx       ## imm = 0xBC8F1391
-	movl	$2147483647, %ebx       ## imm = 0x7FFFFFFF
-	.p2align	4, 0x90
-LBB3_4:                                 ## =>This Inner Loop Header: Depth=1
-	movl	%edx, %eax
-	imulq	%rcx, %rax
-	shrq	$47, %rax
-	imull	$44488, %eax, %esi      ## imm = 0xADC8
-	subl	%esi, %edx
-	imull	$48271, %edx, %esi      ## imm = 0xBC8F
-	imull	$3399, %eax, %eax       ## imm = 0xD47
-	subl	%eax, %esi
-	movl	$0, %eax
-	cmovbl	%ebx, %eax
-	leal	(%rax,%rsi), %edx
-	leal	-1(%rax,%rsi), %eax
-	cmpl	%r12d, %eax
-	jae	LBB3_4
-## %bb.5:                               ##   in Loop: Header=BB3_4 Depth=1
-	incq	%r11
-	cmpq	%r10, %r11
-	jb	LBB3_4
-## %bb.6:
-	andl	%eax, %r9d
-	movl	%r9d, %eax
-LBB3_10:
-	movl	%edx, (%r8)
-	movq	24(%rdi), %r9
-	cmpq	%r9, %r10
-	jae	LBB3_21
-LBB3_12:
-	movq	(%rdi), %r8
-	movq	16(%rdi), %rcx
-	movl	44(%rdi), %esi
-	movl	52(%rdi), %r11d
-	movl	(%r8), %edx
-	cmpq	$31, %rcx
-	jae	LBB3_13
-## %bb.17:
-	incl	%ecx
-	movl	$3163493265, %r14d      ## imm = 0xBC8F1391
-	movl	$2147483647, %r15d      ## imm = 0x7FFFFFFF
-	.p2align	4, 0x90
-LBB3_18:                                ## =>This Inner Loop Header: Depth=1
-	movl	%edx, %edi
-	imulq	%r14, %rdi
-	shrq	$47, %rdi
-	imull	$44488, %edi, %ebx      ## imm = 0xADC8
-	subl	%ebx, %edx
-	imull	$48271, %edx, %ebx      ## imm = 0xBC8F
-	imull	$3399, %edi, %edx       ## imm = 0xD47
-	subl	%edx, %ebx
-	movl	$0, %edi
-	cmovbl	%r15d, %edi
-	leal	(%rdi,%rbx), %edx
-	leal	-1(%rdi,%rbx), %edi
-	cmpl	%esi, %edi
-	jae	LBB3_18
-## %bb.19:                              ##   in Loop: Header=BB3_18 Depth=1
-	shll	%cl, %eax
-	andl	%r11d, %edi
-	addl	%edi, %eax
-	incq	%r10
-	cmpq	%r9, %r10
-	jb	LBB3_18
-	jmp	LBB3_20
-LBB3_13:
-	movl	$3163493265, %eax       ## imm = 0xBC8F1391
-	movl	$2147483647, %ecx       ## imm = 0x7FFFFFFF
-	.p2align	4, 0x90
-LBB3_14:                                ## =>This Inner Loop Header: Depth=1
-	movl	%edx, %edi
-	imulq	%rax, %rdi
-	shrq	$47, %rdi
-	imull	$44488, %edi, %ebx      ## imm = 0xADC8
-	subl	%ebx, %edx
-	imull	$48271, %edx, %ebx      ## imm = 0xBC8F
-	imull	$3399, %edi, %edx       ## imm = 0xD47
-	subl	%edx, %ebx
-	movl	$0, %edi
-	cmovbl	%ecx, %edi
-	leal	(%rdi,%rbx), %edx
-	leal	-1(%rdi,%rbx), %edi
-	cmpl	%esi, %edi
-	jae	LBB3_14
-## %bb.15:                              ##   in Loop: Header=BB3_14 Depth=1
-	incq	%r10
-	cmpq	%r9, %r10
-	jb	LBB3_14
-## %bb.16:
-	andl	%edi, %r11d
-	movl	%r11d, %eax
-LBB3_20:
-	movl	%edx, (%r8)
-LBB3_21:
-                                        ## kill: def $eax killed $eax killed $rax
-	popq	%rbx
-	popq	%r12
-	popq	%r14
-	popq	%r15
-	popq	%rbp
-	retq
-	.cfi_endproc
-                                        ## -- End function
-	.private_extern	___clang_call_terminate ## -- Begin function __clang_call_terminate
-	.globl	___clang_call_terminate
-	.weak_def_can_be_hidden	___clang_call_terminate
-	.p2align	4, 0x90
-___clang_call_terminate:                ## @__clang_call_terminate
-## %bb.0:
-	pushq	%rax
-	callq	___cxa_begin_catch
-	callq	__ZSt9terminatev
-                                        ## -- End function
-	.globl	__ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m ## -- Begin function _ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m
-	.weak_def_can_be_hidden	__ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m
-	.p2align	4, 0x90
-__ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m: ## @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m
-Lfunc_begin1:
-	.cfi_startproc
-	.cfi_personality 155, ___gxx_personality_v0
-	.cfi_lsda 16, Lexception1
-## %bb.0:
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register %rbp
-	pushq	%r15
-	pushq	%r14
-	pushq	%r13
-	pushq	%r12
-	pushq	%rbx
-	subq	$40, %rsp
-	.cfi_offset %rbx, -56
-	.cfi_offset %r12, -48
-	.cfi_offset %r13, -40
-	.cfi_offset %r14, -32
-	.cfi_offset %r15, -24
-	movq	%rdx, %r14
-	movq	%rsi, %r15
-	movq	%rdi, %rbx
-Ltmp24:
-	leaq	-80(%rbp), %rdi
-	movq	%rbx, %rsi
-	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryC1ERS3_
-Ltmp25:
-## %bb.1:
-	cmpb	$0, -80(%rbp)
-	je	LBB5_10
-## %bb.2:
-	movq	(%rbx), %rax
-	movq	-24(%rax), %rax
-	leaq	(%rbx,%rax), %r12
-	movq	40(%rbx,%rax), %rdi
-	movl	8(%rbx,%rax), %r13d
-	movl	144(%rbx,%rax), %eax
-	cmpl	$-1, %eax
-	jne	LBB5_7
-## %bb.3:
-Ltmp27:
-	movq	%rdi, -64(%rbp)         ## 8-byte Spill
-	leaq	-56(%rbp), %rdi
-	movq	%r12, %rsi
-	callq	__ZNKSt3__18ios_base6getlocEv
-Ltmp28:
-## %bb.4:
-Ltmp29:
-	movq	__ZNSt3__15ctypeIcE2idE@GOTPCREL(%rip), %rsi
-	leaq	-56(%rbp), %rdi
-	callq	__ZNKSt3__16locale9use_facetERNS0_2idE
-Ltmp30:
-## %bb.5:
-	movq	(%rax), %rcx
-Ltmp31:
-	movq	%rax, %rdi
-	movl	$32, %esi
-	callq	*56(%rcx)
-	movb	%al, -41(%rbp)          ## 1-byte Spill
-Ltmp32:
-## %bb.6:
-	leaq	-56(%rbp), %rdi
-	callq	__ZNSt3__16localeD1Ev
-	movsbl	-41(%rbp), %eax         ## 1-byte Folded Reload
-	movl	%eax, 144(%r12)
-	movq	-64(%rbp), %rdi         ## 8-byte Reload
-LBB5_7:
-	addq	%r15, %r14
-	andl	$176, %r13d
-	cmpl	$32, %r13d
-	movq	%r15, %rdx
-	cmoveq	%r14, %rdx
-Ltmp34:
-	movsbl	%al, %r9d
-	movq	%r15, %rsi
-	movq	%r14, %rcx
-	movq	%r12, %r8
-	callq	__ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_
-Ltmp35:
-## %bb.8:
-	testq	%rax, %rax
-	jne	LBB5_10
-## %bb.9:
-	movq	(%rbx), %rax
-	movq	-24(%rax), %rax
-	leaq	(%rbx,%rax), %rdi
-	movl	32(%rbx,%rax), %esi
-	orl	$5, %esi
-Ltmp37:
-	callq	__ZNSt3__18ios_base5clearEj
-Ltmp38:
-LBB5_10:
-	leaq	-80(%rbp), %rdi
-	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryD1Ev
-LBB5_11:
-	movq	%rbx, %rax
-	addq	$40, %rsp
-	popq	%rbx
-	popq	%r12
-	popq	%r13
-	popq	%r14
-	popq	%r15
-	popq	%rbp
-	retq
-LBB5_12:
-Ltmp39:
-	jmp	LBB5_15
-LBB5_13:
-Ltmp33:
-	movq	%rax, %r14
-	leaq	-56(%rbp), %rdi
-	callq	__ZNSt3__16localeD1Ev
-	jmp	LBB5_16
-LBB5_14:
-Ltmp36:
-LBB5_15:
-	movq	%rax, %r14
-LBB5_16:
-	leaq	-80(%rbp), %rdi
-	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryD1Ev
-	jmp	LBB5_18
-LBB5_17:
-Ltmp26:
-	movq	%rax, %r14
-LBB5_18:
-	movq	%r14, %rdi
-	callq	___cxa_begin_catch
-	movq	(%rbx), %rax
-	movq	-24(%rax), %rdi
-	addq	%rbx, %rdi
-Ltmp40:
-	callq	__ZNSt3__18ios_base33__set_badbit_and_consider_rethrowEv
-Ltmp41:
-## %bb.19:
-	callq	___cxa_end_catch
-	jmp	LBB5_11
-LBB5_20:
-Ltmp42:
-	movq	%rax, %rbx
-Ltmp43:
-	callq	___cxa_end_catch
-Ltmp44:
-## %bb.21:
-	movq	%rbx, %rdi
-	callq	__Unwind_Resume
-	ud2
-LBB5_22:
-Ltmp45:
-	movq	%rax, %rdi
-	callq	___clang_call_terminate
-Lfunc_end1:
-	.cfi_endproc
-	.section	__TEXT,__gcc_except_tab
-	.p2align	2
-GCC_except_table5:
-Lexception1:
-	.byte	255                     ## @LPStart Encoding = omit
-	.byte	155                     ## @TType Encoding = indirect pcrel sdata4
-	.uleb128 Lttbase0-Lttbaseref0
-Lttbaseref0:
-	.byte	1                       ## Call site Encoding = uleb128
-	.uleb128 Lcst_end1-Lcst_begin1
-Lcst_begin1:
-	.uleb128 Ltmp24-Lfunc_begin1    ## >> Call Site 1 <<
-	.uleb128 Ltmp25-Ltmp24          ##   Call between Ltmp24 and Ltmp25
-	.uleb128 Ltmp26-Lfunc_begin1    ##     jumps to Ltmp26
-	.byte	1                       ##   On action: 1
-	.uleb128 Ltmp27-Lfunc_begin1    ## >> Call Site 2 <<
-	.uleb128 Ltmp28-Ltmp27          ##   Call between Ltmp27 and Ltmp28
-	.uleb128 Ltmp36-Lfunc_begin1    ##     jumps to Ltmp36
-	.byte	1                       ##   On action: 1
-	.uleb128 Ltmp29-Lfunc_begin1    ## >> Call Site 3 <<
-	.uleb128 Ltmp32-Ltmp29          ##   Call between Ltmp29 and Ltmp32
-	.uleb128 Ltmp33-Lfunc_begin1    ##     jumps to Ltmp33
-	.byte	1                       ##   On action: 1
-	.uleb128 Ltmp34-Lfunc_begin1    ## >> Call Site 4 <<
-	.uleb128 Ltmp35-Ltmp34          ##   Call between Ltmp34 and Ltmp35
-	.uleb128 Ltmp36-Lfunc_begin1    ##     jumps to Ltmp36
-	.byte	1                       ##   On action: 1
-	.uleb128 Ltmp37-Lfunc_begin1    ## >> Call Site 5 <<
-	.uleb128 Ltmp38-Ltmp37          ##   Call between Ltmp37 and Ltmp38
-	.uleb128 Ltmp39-Lfunc_begin1    ##     jumps to Ltmp39
-	.byte	1                       ##   On action: 1
-	.uleb128 Ltmp38-Lfunc_begin1    ## >> Call Site 6 <<
-	.uleb128 Ltmp40-Ltmp38          ##   Call between Ltmp38 and Ltmp40
-	.byte	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
-	.uleb128 Ltmp40-Lfunc_begin1    ## >> Call Site 7 <<
-	.uleb128 Ltmp41-Ltmp40          ##   Call between Ltmp40 and Ltmp41
-	.uleb128 Ltmp42-Lfunc_begin1    ##     jumps to Ltmp42
-	.byte	0                       ##   On action: cleanup
-	.uleb128 Ltmp41-Lfunc_begin1    ## >> Call Site 8 <<
-	.uleb128 Ltmp43-Ltmp41          ##   Call between Ltmp41 and Ltmp43
-	.byte	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
-	.uleb128 Ltmp43-Lfunc_begin1    ## >> Call Site 9 <<
-	.uleb128 Ltmp44-Ltmp43          ##   Call between Ltmp43 and Ltmp44
-	.uleb128 Ltmp45-Lfunc_begin1    ##     jumps to Ltmp45
-	.byte	1                       ##   On action: 1
-	.uleb128 Ltmp44-Lfunc_begin1    ## >> Call Site 10 <<
-	.uleb128 Lfunc_end1-Ltmp44      ##   Call between Ltmp44 and Lfunc_end1
-	.byte	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
-Lcst_end1:
-	.byte	1                       ## >> Action Record 1 <<
-                                        ##   Catch TypeInfo 1
-	.byte	0                       ##   No further actions
-	.p2align	2
-                                        ## >> Catch TypeInfos <<
-	.long	0                       ## TypeInfo 1
-Lttbase0:
-	.p2align	2
-                                        ## -- End function
-	.section	__TEXT,__text,regular,pure_instructions
-	.private_extern	__ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_ ## -- Begin function _ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_
-	.globl	__ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_
-	.weak_def_can_be_hidden	__ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_
-	.p2align	4, 0x90
-__ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_: ## @_ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_
-Lfunc_begin2:
-	.cfi_startproc
-	.cfi_personality 155, ___gxx_personality_v0
-	.cfi_lsda 16, Lexception2
-## %bb.0:
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register %rbp
-	pushq	%r15
-	pushq	%r14
-	pushq	%r13
-	pushq	%r12
-	pushq	%rbx
-	subq	$56, %rsp
-	.cfi_offset %rbx, -56
-	.cfi_offset %r12, -48
-	.cfi_offset %r13, -40
-	.cfi_offset %r14, -32
-	.cfi_offset %r15, -24
-	testq	%rdi, %rdi
-	je	LBB6_20
-## %bb.1:
-	movq	%r8, %r12
-	movq	%rcx, %r15
-	movq	%rdi, %r14
-	movl	%r9d, -68(%rbp)         ## 4-byte Spill
+	.cfi_def_cfa_offset 96
+	movq	8(%rdi), %rcx
+	movq	(%rdi), %rbp
 	movq	%rcx, %rax
-	subq	%rsi, %rax
-	movq	24(%r8), %rcx
-	xorl	%r13d, %r13d
-	subq	%rax, %rcx
-	cmovgq	%rcx, %r13
-	movq	%rdx, -88(%rbp)         ## 8-byte Spill
-	movq	%rdx, %rbx
-	subq	%rsi, %rbx
-	testq	%rbx, %rbx
-	jle	LBB6_3
-## %bb.2:
-	movq	(%r14), %rax
+	subq	%rbp, %rdx
+	subq	%rbp, %rax
+	sarq	$2, %rax
+	je	.L10
+	leaq	(%rax,%rax), %rdi
+	movq	$-4, %r14
+	cmpq	%rdi, %rax
+	jbe	.L17
+.L3:
 	movq	%r14, %rdi
-	movq	%rbx, %rdx
-	callq	*96(%rax)
-	cmpq	%rbx, %rax
-	jne	LBB6_20
-LBB6_3:
-	testq	%r13, %r13
-	jle	LBB6_16
-## %bb.4:
-	movq	%r12, -80(%rbp)         ## 8-byte Spill
-	xorps	%xmm0, %xmm0
-	movaps	%xmm0, -64(%rbp)
-	movq	$0, -48(%rbp)
-	cmpq	$23, %r13
-	jae	LBB6_8
-## %bb.5:
-	leal	(%r13,%r13), %eax
-	movb	%al, -64(%rbp)
-	leaq	-64(%rbp), %rbx
-	leaq	-63(%rbp), %r12
-	jmp	LBB6_9
-LBB6_8:
-	leaq	16(%r13), %rbx
-	andq	$-16, %rbx
-	movq	%rbx, %rdi
-	callq	__Znwm
-	movq	%rax, %r12
-	movq	%rax, -48(%rbp)
-	orq	$1, %rbx
-	movq	%rbx, -64(%rbp)
-	movq	%r13, -56(%rbp)
-	leaq	-64(%rbp), %rbx
-LBB6_9:
-	movzbl	-68(%rbp), %esi         ## 1-byte Folded Reload
-	movq	%r12, %rdi
-	movq	%r13, %rdx
-	callq	_memset
-	movb	$0, (%r12,%r13)
-	testb	$1, -64(%rbp)
-	je	LBB6_11
-## %bb.10:
-	movq	-48(%rbp), %rbx
-	jmp	LBB6_12
-LBB6_11:
-	incq	%rbx
-LBB6_12:
-	movq	-80(%rbp), %r12         ## 8-byte Reload
-	movq	(%r14), %rax
-Ltmp46:
-	movq	%r14, %rdi
-	movq	%rbx, %rsi
-	movq	%r13, %rdx
-	callq	*96(%rax)
-Ltmp47:
-## %bb.13:
+	movq	%rdx, 16(%rsp)
+	movq	%rcx, 8(%rsp)
+	call	_Znwm@PLT
+	movq	16(%rsp), %rdx
+	movq	8(%rsp), %rcx
 	movq	%rax, %rbx
-	testb	$1, -64(%rbp)
-	je	LBB6_15
-## %bb.14:
-	movq	-48(%rbp), %rdi
-	callq	__ZdlPv
-LBB6_15:
-	cmpq	%r13, %rbx
-	jne	LBB6_20
-LBB6_16:
-	movq	-88(%rbp), %rsi         ## 8-byte Reload
-	subq	%rsi, %r15
-	testq	%r15, %r15
-	jle	LBB6_18
-## %bb.17:
-	movq	(%r14), %rax
-	movq	%r14, %rdi
+	addq	%rax, %r14
+.L4:
+	movl	(%r15), %eax
+	movq	%rcx, %r15
+	leaq	4(%rbx,%rdx), %r9
+	subq	%r12, %r15
+	movl	%eax, (%rbx,%rdx)
+	leaq	(%r9,%r15), %rax
+	movq	%rax, 8(%rsp)
+	cmpq	%rbp, %r12
+	je	.L5
+	movq	%rbp, %rsi
+	movq	%rbx, %rdi
+	movq	%r9, 24(%rsp)
+	movq	%rcx, 16(%rsp)
+	call	memmove@PLT
+	movq	16(%rsp), %rcx
+	movq	24(%rsp), %r9
+	cmpq	%rcx, %r12
+	je	.L9
+.L6:
 	movq	%r15, %rdx
-	callq	*96(%rax)
-	cmpq	%r15, %rax
-	jne	LBB6_20
-LBB6_18:
-	movq	$0, 24(%r12)
-	jmp	LBB6_21
-LBB6_20:
-	xorl	%r14d, %r14d
-LBB6_21:
-	movq	%r14, %rax
-	addq	$56, %rsp
+	movq	%r12, %rsi
+	movq	%r9, %rdi
+	call	memcpy@PLT
+.L8:
+	testq	%rbp, %rbp
+	jne	.L9
+.L7:
+	movq	%rbx, 16(%rsp)
+	movq	16(%rsp), %xmm0
+	movq	%r14, 16(%r13)
+	movhps	8(%rsp), %xmm0
+	movups	%xmm0, 0(%r13)
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 56
 	popq	%rbx
-	popq	%r12
-	popq	%r13
-	popq	%r14
-	popq	%r15
+	.cfi_def_cfa_offset 48
 	popq	%rbp
-	retq
-LBB6_22:
-Ltmp48:
-	movq	%rax, %rbx
-	testb	$1, -64(%rbp)
-	je	LBB6_24
-## %bb.23:
-	movq	-48(%rbp), %rdi
-	callq	__ZdlPv
-LBB6_24:
-	movq	%rbx, %rdi
-	callq	__Unwind_Resume
-	ud2
-Lfunc_end2:
+	.cfi_def_cfa_offset 40
+	popq	%r12
+	.cfi_def_cfa_offset 32
+	popq	%r13
+	.cfi_def_cfa_offset 24
+	popq	%r14
+	.cfi_def_cfa_offset 16
+	popq	%r15
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L9:
+	.cfi_restore_state
+	movq	%rbp, %rdi
+	call	_ZdlPv@PLT
+	jmp	.L7
+	.p2align 4,,10
+	.p2align 3
+.L17:
+	movabsq	$4611686018427387903, %rax
+	cmpq	%rax, %rdi
+	ja	.L3
+	xorl	%r14d, %r14d
+	xorl	%ebx, %ebx
+	testq	%rdi, %rdi
+	je	.L4
+	jmp	.L2
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	cmpq	%rcx, %r12
+	jne	.L6
+	jmp	.L8
+	.p2align 4,,10
+	.p2align 3
+.L10:
+	movl	$1, %edi
+.L2:
+	leaq	0(,%rdi,4), %r14
+	jmp	.L3
 	.cfi_endproc
-	.section	__TEXT,__gcc_except_tab
-	.p2align	2
-GCC_except_table6:
-Lexception2:
-	.byte	255                     ## @LPStart Encoding = omit
-	.byte	255                     ## @TType Encoding = omit
-	.byte	1                       ## Call site Encoding = uleb128
-	.uleb128 Lcst_end2-Lcst_begin2
-Lcst_begin2:
-	.uleb128 Lfunc_begin2-Lfunc_begin2 ## >> Call Site 1 <<
-	.uleb128 Ltmp46-Lfunc_begin2    ##   Call between Lfunc_begin2 and Ltmp46
-	.byte	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
-	.uleb128 Ltmp46-Lfunc_begin2    ## >> Call Site 2 <<
-	.uleb128 Ltmp47-Ltmp46          ##   Call between Ltmp46 and Ltmp47
-	.uleb128 Ltmp48-Lfunc_begin2    ##     jumps to Ltmp48
-	.byte	0                       ##   On action: cleanup
-	.uleb128 Ltmp47-Lfunc_begin2    ## >> Call Site 3 <<
-	.uleb128 Lfunc_end2-Ltmp47      ##   Call between Ltmp47 and Lfunc_end2
-	.byte	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
-Lcst_end2:
-	.p2align	2
-                                        ## -- End function
-	.section	__DATA,__data
-	.globl	_BUFFER_POWER_MIN       ## @BUFFER_POWER_MIN
-	.p2align	2
-_BUFFER_POWER_MIN:
-	.long	10                      ## 0xa
-
-	.globl	_BUFFER_POWER_MAX       ## @BUFFER_POWER_MAX
-	.p2align	2
-_BUFFER_POWER_MAX:
-	.long	26                      ## 0x1a
-
-	.globl	_testingSize            ## @testingSize
-	.p2align	2
-_testingSize:
-	.long	1000                    ## 0x3e8
-
-	.section	__TEXT,__cstring,cstring_literals
-L_.str:                                 ## @.str
-	.asciz	"Byte:"
-
-L_.str.1:                               ## @.str.1
-	.asciz	"      "
-
-L_.str.2:                               ## @.str.2
-	.asciz	"Time: \n"
-
-
-.subsections_via_symbols
+.LFE4154:
+	.size	_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_, .-_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_
+	.section	.text._ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm16807ELm0ELm2147483647EEEEiRT_RKNS0_10param_typeE,"axG",@progbits,_ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm16807ELm0ELm2147483647EEEEiRT_RKNS0_10param_typeE,comdat
+	.align 2
+	.p2align 4,,15
+	.weak	_ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm16807ELm0ELm2147483647EEEEiRT_RKNS0_10param_typeE
+	.type	_ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm16807ELm0ELm2147483647EEEEiRT_RKNS0_10param_typeE, @function
+_ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm16807ELm0ELm2147483647EEEEiRT_RKNS0_10param_typeE:
+.LFB4155:
+	.cfi_startproc
+	pushq	%r15
+	.cfi_def_cfa_offset 16
+	.cfi_offset 15, -16
+	pushq	%r14
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
+	movq	%rsi, %r14
+	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	pushq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 80
+	movslq	4(%rdx), %r15
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	movslq	(%rdx), %rax
+	subq	%rax, %r15
+	movq	%rax, %rsi
+	cmpq	$2147483644, %r15
+	ja	.L19
+	addq	$1, %r15
+	movl	$2147483645, %eax
+	xorl	%edx, %edx
+	movabsq	$8589934597, %r8
+	divq	%r15
+	movq	(%r14), %rdx
+	imulq	%rax, %r15
+	movq	%rax, %r9
+	.p2align 4,,10
+	.p2align 3
+.L20:
+	imulq	$16807, %rdx, %rdi
+	movq	%rdi, %rax
+	movq	%rdi, %rcx
+	mulq	%r8
+	subq	%rdx, %rcx
+	shrq	%rcx
+	addq	%rcx, %rdx
+	shrq	$30, %rdx
+	movq	%rdx, %rcx
+	salq	$31, %rcx
+	subq	%rdx, %rcx
+	subq	%rcx, %rdi
+	leaq	-1(%rdi), %rax
+	movq	%rdi, %rdx
+	cmpq	%rax, %r15
+	jbe	.L20
+	xorl	%edx, %edx
+	movq	%rdi, (%r14)
+	divq	%r9
+.L21:
+	addl	%esi, %eax
+	movq	8(%rsp), %rbx
+	xorq	%fs:40, %rbx
+	jne	.L34
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 56
+	popq	%rbx
+	.cfi_def_cfa_offset 48
+	popq	%rbp
+	.cfi_def_cfa_offset 40
+	popq	%r12
+	.cfi_def_cfa_offset 32
+	popq	%r13
+	.cfi_def_cfa_offset 24
+	popq	%r14
+	.cfi_def_cfa_offset 16
+	popq	%r15
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L19:
+	.cfi_restore_state
+	cmpq	$2147483645, %r15
+	je	.L22
+	movq	%rdx, %r12
+	movq	%r15, %rdx
+	movq	%rdi, %rbp
+	movq	%rsp, %r13
+	movabsq	$-9223372028264841207, %rbx
+	shrq	%rdx
+	movq	%rdx, %rax
+	mulq	%rbx
+	shrq	$29, %rdx
+	movl	%edx, %ebx
+.L30:
+	movq	%r13, %rdx
+	movq	%r14, %rsi
+	movq	%rbp, %rdi
+	movl	$0, (%rsp)
+	movl	%ebx, 4(%rsp)
+	call	_ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm16807ELm0ELm2147483647EEEEiRT_RKNS0_10param_typeE
+	imulq	$16807, (%r14), %rdi
+	movslq	%eax, %rsi
+	movabsq	$8589934597, %rax
+	mulq	%rdi
+	movq	%rdi, %rax
+	subq	%rdx, %rax
+	shrq	%rax
+	addq	%rax, %rdx
+	shrq	$30, %rdx
+	movq	%rdx, %rax
+	salq	$31, %rax
+	subq	%rdx, %rax
+	subq	%rax, %rdi
+	movq	%rsi, %rax
+	salq	$30, %rax
+	movq	%rdi, %rdx
+	movq	%rdi, (%r14)
+	subq	%rsi, %rax
+	subq	$1, %rdx
+	addq	%rax, %rax
+	addq	%rdx, %rax
+	setc	%dl
+	movzbl	%dl, %edx
+	cmpq	%rax, %r15
+	jb	.L30
+	testq	%rdx, %rdx
+	jne	.L30
+	movl	(%r12), %esi
+	jmp	.L21
+	.p2align 4,,10
+	.p2align 3
+.L22:
+	imulq	$16807, (%r14), %rcx
+	movabsq	$8589934597, %rdx
+	movq	%rcx, %rax
+	mulq	%rdx
+	movq	%rcx, %rax
+	subq	%rdx, %rax
+	shrq	%rax
+	addq	%rdx, %rax
+	shrq	$30, %rax
+	movq	%rax, %rdx
+	salq	$31, %rdx
+	subq	%rax, %rdx
+	subq	%rdx, %rcx
+	movq	%rcx, %rax
+	movq	%rcx, (%r14)
+	subq	$1, %rax
+	jmp	.L21
+.L34:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE4155:
+	.size	_ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm16807ELm0ELm2147483647EEEEiRT_RKNS0_10param_typeE, .-_ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm16807ELm0ELm2147483647EEEEiRT_RKNS0_10param_typeE
+	.text
+	.p2align 4,,15
+	.globl	_Z11init_bufferiRSt26linear_congruential_engineImLm16807ELm0ELm2147483647EERSt6vectorIiSaIiEE
+	.type	_Z11init_bufferiRSt26linear_congruential_engineImLm16807ELm0ELm2147483647EERSt6vectorIiSaIiEE, @function
+_Z11init_bufferiRSt26linear_congruential_engineImLm16807ELm0ELm2147483647EERSt6vectorIiSaIiEE:
+.LFB3688:
+	.cfi_startproc
+	pushq	%r15
+	.cfi_def_cfa_offset 16
+	.cfi_offset 15, -16
+	pushq	%r14
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
+	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	pushq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+	leal	-1(%rdi), %ebp
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	subq	$88, %rsp
+	.cfi_def_cfa_offset 144
+	movl	%edi, 28(%rsp)
+	movq	%rdx, 32(%rsp)
+	movq	%fs:40, %rbx
+	movq	%rbx, 72(%rsp)
+	xorl	%ebx, %ebx
+	movl	$0, 56(%rsp)
+	movl	%ebp, 60(%rsp)
+	movl	$0, 64(%rsp)
+	testl	%ebp, %ebp
+	jle	.L35
+	movq	%rsi, %r12
+	xorl	%eax, %eax
+	leaq	64(%rsp), %rbx
+	movq	%rdx, %r13
+	jmp	.L40
+	.p2align 4,,10
+	.p2align 3
+.L65:
+	movl	%eax, (%rsi)
+	movl	64(%rsp), %eax
+	addq	$4, %rsi
+	movq	%rsi, 8(%r13)
+	addl	$1, %eax
+	movl	%eax, 64(%rsp)
+	cmpl	%eax, %ebp
+	jle	.L64
+.L40:
+	movq	8(%r13), %rsi
+	cmpq	16(%r13), %rsi
+	jne	.L65
+	movq	%rbx, %rdx
+	movq	%r13, %rdi
+	call	_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_
+	movl	64(%rsp), %eax
+	addl	$1, %eax
+	movl	%eax, 64(%rsp)
+	cmpl	%eax, %ebp
+	jg	.L40
+	.p2align 4,,10
+	.p2align 3
+.L64:
+	movl	28(%rsp), %eax
+	leaq	56(%rsp), %r13
+	movq	%r12, %r14
+	movq	$0, 16(%rsp)
+	movabsq	$8589934597, %rbp
+	movq	16(%rsp), %rbx
+	subl	$2, %eax
+	movq	%rax, 40(%rsp)
+	leaq	64(%rsp), %rax
+	movq	%rax, (%rsp)
+	.p2align 4,,10
+	.p2align 3
+.L50:
+	movq	%r13, %rdx
+	movq	%r14, %rsi
+	movq	%r13, %rdi
+	movl	%ebx, %r12d
+	call	_ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm16807ELm0ELm2147483647EEEEiRT_RKNS0_10param_typeE
+	movl	28(%rsp), %esi
+	cltd
+	subl	%ebx, %esi
+	idivl	%esi
+	movl	%esi, 12(%rsp)
+	movl	%edx, 24(%rsp)
+	addl	%ebx, %edx
+	movl	%edx, %eax
+	cmpl	%ebx, %edx
+	jne	.L41
+	movl	56(%rsp), %esi
+	.p2align 4,,10
+	.p2align 3
+.L49:
+	movslq	60(%rsp), %rcx
+	movslq	%esi, %rax
+	subq	%rax, %rcx
+	movq	%rcx, %r15
+	cmpq	$2147483644, %rcx
+	ja	.L42
+	leaq	1(%rcx), %rcx
+	movl	$2147483645, %eax
+	xorl	%edx, %edx
+	movq	(%r14), %rdi
+	divq	%rcx
+	imulq	%rax, %rcx
+	movq	%rax, %r9
+	.p2align 4,,10
+	.p2align 3
+.L43:
+	imulq	$16807, %rdi, %r8
+	movq	%r8, %rax
+	movq	%r8, %rdi
+	mulq	%rbp
+	subq	%rdx, %rdi
+	shrq	%rdi
+	addq	%rdx, %rdi
+	shrq	$30, %rdi
+	movq	%rdi, %rax
+	salq	$31, %rax
+	subq	%rdi, %rax
+	movq	%r8, %rdi
+	subq	%rax, %rdi
+	leaq	-1(%rdi), %rax
+	cmpq	%rax, %rcx
+	jbe	.L43
+	xorl	%edx, %edx
+	movq	%rdi, (%r14)
+	divq	%r9
+.L44:
+	addl	%esi, %eax
+	cltd
+	idivl	12(%rsp)
+	leal	(%rdx,%r12), %eax
+	cmpl	%edx, 24(%rsp)
+	je	.L49
+.L41:
+	movq	32(%rsp), %rbx
+	cltq
+	movq	(%rbx), %rdx
+	movq	16(%rsp), %rbx
+	leaq	(%rdx,%rax,4), %rax
+	leaq	(%rdx,%rbx,4), %rdx
+	movl	(%rax), %esi
+	movl	(%rdx), %ecx
+	movl	%esi, (%rdx)
+	movl	%ecx, (%rax)
+	leaq	1(%rbx), %rax
+	cmpq	%rbx, 40(%rsp)
+	je	.L35
+	movq	%rax, 16(%rsp)
+	movq	%rax, %rbx
+	jmp	.L50
+	.p2align 4,,10
+	.p2align 3
+.L35:
+	movq	72(%rsp), %rax
+	xorq	%fs:40, %rax
+	jne	.L66
+	addq	$88, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 56
+	popq	%rbx
+	.cfi_def_cfa_offset 48
+	popq	%rbp
+	.cfi_def_cfa_offset 40
+	popq	%r12
+	.cfi_def_cfa_offset 32
+	popq	%r13
+	.cfi_def_cfa_offset 24
+	popq	%r14
+	.cfi_def_cfa_offset 16
+	popq	%r15
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L42:
+	.cfi_restore_state
+	cmpq	$2147483645, %rcx
+	je	.L45
+	movabsq	$-9223372028264841207, %rax
+	movq	%rcx, %rdx
+	shrq	%rdx
+	mulq	%rdx
+	shrq	$29, %rdx
+	movl	%edx, %ebx
+.L58:
+	movq	(%rsp), %rdx
+	movq	%r14, %rsi
+	movq	%r13, %rdi
+	movl	%ebx, 68(%rsp)
+	movl	$0, 64(%rsp)
+	call	_ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm16807ELm0ELm2147483647EEEEiRT_RKNS0_10param_typeE
+	imulq	$16807, (%r14), %rsi
+	movslq	%eax, %rcx
+	movq	%rsi, %rax
+	mulq	%rbp
+	movq	%rsi, %rax
+	subq	%rdx, %rax
+	shrq	%rax
+	addq	%rax, %rdx
+	shrq	$30, %rdx
+	movq	%rdx, %rax
+	salq	$31, %rax
+	subq	%rdx, %rax
+	subq	%rax, %rsi
+	movq	%rcx, %rax
+	salq	$30, %rax
+	movq	%rsi, %rdx
+	movq	%rsi, (%r14)
+	subq	%rcx, %rax
+	subq	$1, %rdx
+	addq	%rax, %rax
+	addq	%rax, %rdx
+	setc	%al
+	movzbl	%al, %eax
+	cmpq	%rdx, %r15
+	jb	.L58
+	testq	%rax, %rax
+	jne	.L58
+	movq	%rdx, %rax
+	movl	56(%rsp), %esi
+	jmp	.L44
+	.p2align 4,,10
+	.p2align 3
+.L45:
+	imulq	$16807, (%r14), %rcx
+	movq	%rcx, %rax
+	mulq	%rbp
+	movq	%rcx, %rax
+	subq	%rdx, %rax
+	shrq	%rax
+	addq	%rdx, %rax
+	shrq	$30, %rax
+	movq	%rax, %rdx
+	salq	$31, %rdx
+	subq	%rax, %rdx
+	subq	%rdx, %rcx
+	movq	%rcx, %rax
+	movq	%rcx, (%r14)
+	subq	$1, %rax
+	jmp	.L44
+.L66:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE3688:
+	.size	_Z11init_bufferiRSt26linear_congruential_engineImLm16807ELm0ELm2147483647EERSt6vectorIiSaIiEE, .-_Z11init_bufferiRSt26linear_congruential_engineImLm16807ELm0ELm2147483647EERSt6vectorIiSaIiEE
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"# Bytes:"
+.LC1:
+	.string	"      "
+	.section	.rodata.str1.8,"aMS",@progbits,1
+	.align 8
+.LC2:
+	.string	"Time of one byte (nanoseconds): \n"
+	.section	.text.unlikely,"ax",@progbits
+.LCOLDB4:
+	.section	.text.startup,"ax",@progbits
+.LHOTB4:
+	.p2align 4,,15
+	.globl	main
+	.type	main, @function
+main:
+.LFB3689:
+	.cfi_startproc
+	.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+	.cfi_lsda 0x1b,.LLSDA3689
+	pushq	%r15
+	.cfi_def_cfa_offset 16
+	.cfi_offset 15, -16
+	movl	$8, %edx
+	leaq	.LC0(%rip), %rsi
+	leaq	_ZSt4cout(%rip), %rdi
+	pushq	%r14
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
+	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	pushq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+	movabsq	$8589934597, %rbp
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	subq	$104, %rsp
+	.cfi_def_cfa_offset 160
+	movq	%fs:40, %rax
+	movq	%rax, 88(%rsp)
+	xorl	%eax, %eax
+	leaq	40(%rsp), %r12
+.LEHB0:
+	call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@PLT
+	movl	$6, %edx
+	leaq	.LC1(%rip), %rsi
+	leaq	_ZSt4cout(%rip), %rdi
+	call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@PLT
+	leaq	.LC2(%rip), %rsi
+	leaq	_ZSt4cout(%rip), %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+.LEHE0:
+	leaq	64(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	movq	$0, 80(%rsp)
+	movq	$1, 40(%rsp)
+	movl	$10, 16(%rsp)
+	movq	%rax, 24(%rsp)
+	movaps	%xmm0, 64(%rsp)
+	.p2align 4,,10
+	.p2align 3
+.L88:
+	pxor	%xmm1, %xmm1
+	movsd	.LC3(%rip), %xmm0
+	cvtsi2sd	16(%rsp), %xmm1
+	call	pow@PLT
+	movq	24(%rsp), %rdx
+	movq	%r12, %rsi
+	cvttsd2si	%xmm0, %eax
+	movl	%eax, %edi
+	movl	%eax, %ebx
+	movl	%eax, 20(%rsp)
+.LEHB1:
+	call	_Z11init_bufferiRSt26linear_congruential_engineImLm16807ELm0ELm2147483647EERSt6vectorIiSaIiEE
+	movslq	TESTING_SIZE(%rip), %rdi
+	leal	-1(%rbx), %r8d
+	movb	$97, 39(%rsp)
+	movl	$0, 48(%rsp)
+	movl	%r8d, 52(%rsp)
+	testl	%edi, %edi
+	jle	.L68
+	leaq	48(%rsp), %rax
+	xorl	%esi, %esi
+	leaq	56(%rsp), %r14
+	xorl	%r15d, %r15d
+	movq	%rax, 8(%rsp)
+	.p2align 4,,10
+	.p2align 3
+.L77:
+	movslq	%r8d, %r8
+	movslq	%esi, %rax
+	subq	%rax, %r8
+	movq	%r8, %r13
+	cmpq	$2147483644, %r8
+	ja	.L69
+	leaq	1(%r8), %r8
+	movl	$2147483645, %eax
+	xorl	%edx, %edx
+	movq	40(%rsp), %rcx
+	divq	%r8
+	imulq	%rax, %r8
+	movq	%rax, %r9
+	.p2align 4,,10
+	.p2align 3
+.L70:
+	imulq	$16807, %rcx, %r10
+	movq	%r10, %rax
+	movq	%r10, %rcx
+	mulq	%rbp
+	subq	%rdx, %rcx
+	shrq	%rcx
+	addq	%rdx, %rcx
+	shrq	$30, %rcx
+	movq	%rcx, %rax
+	salq	$31, %rax
+	subq	%rcx, %rax
+	movq	%r10, %rcx
+	subq	%rax, %rcx
+	leaq	-1(%rcx), %rax
+	cmpq	%rax, %r8
+	jbe	.L70
+	xorl	%edx, %edx
+	movq	%rcx, 40(%rsp)
+	divq	%r9
+.L71:
+	movq	64(%rsp), %rdx
+	addl	%esi, %eax
+	addl	$1, %r15d
+	cltq
+	movl	(%rdx,%rax,4), %eax
+	movb	%al, 39(%rsp)
+	movzbl	39(%rsp), %eax
+	cmpl	%edi, %r15d
+	jge	.L76
+	movl	52(%rsp), %r8d
+	jmp	.L77
+	.p2align 4,,10
+	.p2align 3
+.L69:
+	cmpq	$2147483645, %r8
+	je	.L72
+	movabsq	$-9223372028264841207, %rax
+	movq	%r8, %rdx
+	shrq	%rdx
+	mulq	%rdx
+	shrq	$29, %rdx
+	movl	%edx, %ebx
+.L109:
+	movq	8(%rsp), %rdi
+	movq	%r14, %rdx
+	movq	%r12, %rsi
+	movl	%ebx, 60(%rsp)
+	movl	$0, 56(%rsp)
+	call	_ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm16807ELm0ELm2147483647EEEEiRT_RKNS0_10param_typeE
+	imulq	$16807, 40(%rsp), %rdi
+	movl	%eax, %esi
+	movq	%rdi, %rax
+	movq	%rdi, %rcx
+	mulq	%rbp
+	subq	%rdx, %rcx
+	shrq	%rcx
+	addq	%rdx, %rcx
+	movslq	%esi, %rdx
+	shrq	$30, %rcx
+	movq	%rcx, %rax
+	salq	$31, %rax
+	subq	%rcx, %rax
+	subq	%rax, %rdi
+	movq	%rdx, %rax
+	salq	$30, %rax
+	movq	%rdi, %rcx
+	movq	%rdi, 40(%rsp)
+	subq	%rdx, %rax
+	leaq	-1(%rdi), %rdx
+	addq	%rax, %rax
+	addq	%rdx, %rax
+	setc	%dl
+	movzbl	%dl, %edx
+	cmpq	%rax, %r13
+	jb	.L109
+	testq	%rdx, %rdx
+	jne	.L109
+	movl	48(%rsp), %esi
+	movslq	TESTING_SIZE(%rip), %rdi
+	jmp	.L71
+	.p2align 4,,10
+	.p2align 3
+.L72:
+	imulq	$16807, 40(%rsp), %r8
+	movq	%r8, %rax
+	movq	%r8, %rcx
+	mulq	%rbp
+	subq	%rdx, %rcx
+	shrq	%rcx
+	addq	%rdx, %rcx
+	shrq	$30, %rcx
+	movq	%rcx, %rax
+	salq	$31, %rax
+	subq	%rcx, %rax
+	movq	%r8, %rcx
+	subq	%rax, %rcx
+	movq	%rcx, 40(%rsp)
+	leaq	-1(%rcx), %rax
+	jmp	.L71
+	.p2align 4,,10
+	.p2align 3
+.L68:
+	movq	40(%rsp), %rcx
+	.p2align 4,,10
+	.p2align 3
+.L76:
+	imulq	$16807, %rcx, %rcx
+	movq	%rcx, %rax
+	mulq	%rbp
+	movq	%rcx, %rax
+	subq	%rdx, %rax
+	shrq	%rax
+	addq	%rax, %rdx
+	shrq	$30, %rdx
+	movq	%rdx, %rax
+	salq	$31, %rax
+	subq	%rdx, %rax
+	subq	%rax, %rcx
+	movabsq	$2305843009213693950, %rax
+	movq	%rcx, 40(%rsp)
+	cmpq	%rax, %rdi
+	ja	.L78
+	salq	$2, %rdi
+	call	_Znam@PLT
+	movslq	TESTING_SIZE(%rip), %rdi
+	movq	%rax, %r13
+	call	_Znam@PLT
+	movq	%rax, %r14
+	movl	TESTING_SIZE(%rip), %eax
+	xorl	%r15d, %r15d
+	leaq	48(%rsp), %rbx
+	testl	%eax, %eax
+	jle	.L83
+	.p2align 4,,10
+	.p2align 3
+.L80:
+	movq	%rbx, %rdx
+	movq	%r12, %rsi
+	movq	%rbx, %rdi
+	call	_ZNSt24uniform_int_distributionIiEclISt26linear_congruential_engineImLm16807ELm0ELm2147483647EEEEiRT_RKNS0_10param_typeE
+	movl	%eax, 0(%r13,%r15,4)
+	addq	$1, %r15
+	cmpl	%r15d, TESTING_SIZE(%rip)
+	jg	.L80
+.L83:
+	call	_ZNSt6chrono3_V212system_clock3nowEv@PLT
+	movl	TESTING_SIZE(%rip), %edx
+	movq	%rax, %r15
+	testl	%edx, %edx
+	jle	.L125
+	movq	64(%rsp), %rcx
+	xorl	%eax, %eax
+	xorl	%ebx, %ebx
+	.p2align 4,,10
+	.p2align 3
+.L84:
+	addl	$1, %eax
+	movslq	(%rcx,%rbx,4), %rbx
+	cmpl	%edx, %eax
+	jne	.L84
+.L81:
+	call	_ZNSt6chrono3_V212system_clock3nowEv@PLT
+	pxor	%xmm0, %xmm0
+	pxor	%xmm1, %xmm1
+	movl	20(%rsp), %esi
+	subq	%r15, %rax
+	cvtsi2sd	TESTING_SIZE(%rip), %xmm1
+	leaq	_ZSt4cout(%rip), %rdi
+	cvtsi2sdq	%rax, %xmm0
+	divsd	%xmm1, %xmm0
+	movsd	%xmm0, 8(%rsp)
+	call	_ZNSolsEi@PLT
+	movl	$6, %edx
+	leaq	.LC1(%rip), %rsi
+	movq	%rax, %rdi
+	movq	%rax, %r15
+	call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@PLT
+	movsd	8(%rsp), %xmm0
+	movq	%r15, %rdi
+	call	_ZNSo9_M_insertIdEERSoT_@PLT
+	movl	%ebx, %esi
+	movq	%rax, %rdi
+	call	_ZNSolsEi@PLT
+	movl	$6, %edx
+	leaq	.LC1(%rip), %rsi
+	movq	%rax, %rdi
+	movq	%rax, %rbx
+	call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@PLT
+	leaq	56(%rsp), %rsi
+	movl	$1, %edx
+	movq	%rbx, %rdi
+	movb	$10, 56(%rsp)
+	call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@PLT
+.LEHE1:
+	movq	64(%rsp), %rax
+	cmpq	72(%rsp), %rax
+	je	.L85
+	movq	%rax, 72(%rsp)
+.L85:
+	movq	%r13, %rdi
+	call	_ZdaPv@PLT
+	movq	%r14, %rdi
+	call	_ZdaPv@PLT
+	addl	$1, 16(%rsp)
+	movl	16(%rsp), %eax
+	cmpl	$27, %eax
+	jne	.L88
+	movq	64(%rsp), %rdi
+	testq	%rdi, %rdi
+	je	.L89
+	call	_ZdlPv@PLT
+.L89:
+	xorl	%eax, %eax
+	movq	88(%rsp), %rbx
+	xorq	%fs:40, %rbx
+	jne	.L126
+	addq	$104, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 56
+	popq	%rbx
+	.cfi_def_cfa_offset 48
+	popq	%rbp
+	.cfi_def_cfa_offset 40
+	popq	%r12
+	.cfi_def_cfa_offset 32
+	popq	%r13
+	.cfi_def_cfa_offset 24
+	popq	%r14
+	.cfi_def_cfa_offset 16
+	popq	%r15
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L125:
+	.cfi_restore_state
+	xorl	%ebx, %ebx
+	jmp	.L81
+.L126:
+	call	__stack_chk_fail@PLT
+.L116:
+	jmp	.L117
+	.globl	__gxx_personality_v0
+	.section	.gcc_except_table,"a",@progbits
+.LLSDA3689:
+	.byte	0xff
+	.byte	0xff
+	.byte	0x1
+	.uleb128 .LLSDACSE3689-.LLSDACSB3689
+.LLSDACSB3689:
+	.uleb128 .LEHB0-.LFB3689
+	.uleb128 .LEHE0-.LEHB0
+	.uleb128 0
+	.uleb128 0
+	.uleb128 .LEHB1-.LFB3689
+	.uleb128 .LEHE1-.LEHB1
+	.uleb128 .L116-.LFB3689
+	.uleb128 0
+.LLSDACSE3689:
+	.section	.text.startup
+	.cfi_endproc
+	.section	.text.unlikely
+	.cfi_startproc
+	.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+	.cfi_lsda 0x1b,.LLSDAC3689
+	.type	main.cold.32, @function
+main.cold.32:
+.LFSB3689:
+.L78:
+	.cfi_def_cfa_offset 160
+	.cfi_offset 3, -56
+	.cfi_offset 6, -48
+	.cfi_offset 12, -40
+	.cfi_offset 13, -32
+	.cfi_offset 14, -24
+	.cfi_offset 15, -16
+.LEHB2:
+	call	__cxa_throw_bad_array_new_length@PLT
+.LEHE2:
+.L95:
+.L117:
+	movq	64(%rsp), %rdi
+	movq	%rax, %rbx
+	testq	%rdi, %rdi
+	je	.L91
+	call	_ZdlPv@PLT
+.L91:
+	movq	%rbx, %rdi
+.LEHB3:
+	call	_Unwind_Resume@PLT
+.LEHE3:
+	.cfi_endproc
+.LFE3689:
+	.section	.gcc_except_table
+.LLSDAC3689:
+	.byte	0xff
+	.byte	0xff
+	.byte	0x1
+	.uleb128 .LLSDACSEC3689-.LLSDACSBC3689
+.LLSDACSBC3689:
+	.uleb128 .LEHB2-.LCOLDB4
+	.uleb128 .LEHE2-.LEHB2
+	.uleb128 .L95-.LCOLDB4
+	.uleb128 0
+	.uleb128 .LEHB3-.LCOLDB4
+	.uleb128 .LEHE3-.LEHB3
+	.uleb128 0
+	.uleb128 0
+.LLSDACSEC3689:
+	.section	.text.unlikely
+	.section	.text.startup
+	.size	main, .-main
+	.section	.text.unlikely
+	.size	main.cold.32, .-main.cold.32
+.LCOLDE4:
+	.section	.text.startup
+.LHOTE4:
+	.p2align 4,,15
+	.type	_GLOBAL__sub_I_TESTING_SIZE, @function
+_GLOBAL__sub_I_TESTING_SIZE:
+.LFB4463:
+	.cfi_startproc
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 16
+	leaq	_ZStL8__ioinit(%rip), %rdi
+	call	_ZNSt8ios_base4InitC1Ev@PLT
+	movq	_ZNSt8ios_base4InitD1Ev@GOTPCREL(%rip), %rdi
+	addq	$8, %rsp
+	.cfi_def_cfa_offset 8
+	leaq	__dso_handle(%rip), %rdx
+	leaq	_ZStL8__ioinit(%rip), %rsi
+	jmp	__cxa_atexit@PLT
+	.cfi_endproc
+.LFE4463:
+	.size	_GLOBAL__sub_I_TESTING_SIZE, .-_GLOBAL__sub_I_TESTING_SIZE
+	.section	.init_array,"aw"
+	.align 8
+	.quad	_GLOBAL__sub_I_TESTING_SIZE
+	.globl	TESTING_SIZE
+	.data
+	.align 4
+	.type	TESTING_SIZE, @object
+	.size	TESTING_SIZE, 4
+TESTING_SIZE:
+	.long	1000
+	.local	_ZStL8__ioinit
+	.comm	_ZStL8__ioinit,1,1
+	.section	.rodata.cst8,"aM",@progbits,8
+	.align 8
+.LC3:
+	.long	0
+	.long	1073741824
+	.hidden	DW.ref.__gxx_personality_v0
+	.weak	DW.ref.__gxx_personality_v0
+	.section	.data.rel.local.DW.ref.__gxx_personality_v0,"awG",@progbits,DW.ref.__gxx_personality_v0,comdat
+	.align 8
+	.type	DW.ref.__gxx_personality_v0, @object
+	.size	DW.ref.__gxx_personality_v0, 8
+DW.ref.__gxx_personality_v0:
+	.quad	__gxx_personality_v0
+	.hidden	__dso_handle
+	.ident	"GCC: (Ubuntu 8.3.0-6ubuntu1~18.04.1) 8.3.0"
+	.section	.note.GNU-stack,"",@progbits

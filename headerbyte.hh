@@ -7,9 +7,10 @@
 #include <random>
 #include <sstream>
 #include <iostream>
+#include <algorithm>
 #include <stdint.h>
 #include <cassert>
 #pragma once
 using namespace std;
 
-void init_buffer(int bufferSize, default_random_engine& generator, vector<char>& buffer);
+void init_buffer(int bufferSize, default_random_engine& generator, vector<int>& buffer);
