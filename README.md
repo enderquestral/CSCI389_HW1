@@ -1,4 +1,4 @@
-# CSCI389_HW1
+# CSCI389_HW1 Hannah Hellerstein
 Homework 01 (Benchmarking the memory hierarchy) for Reed College Computer Systems Course
 Part 1: Benchmarking (60%)
 NOTE: I did get some help from my tutor, Monica Moniot (specifically, to shift my code s.t. it shifted to a buffer of ints from a buffer of chars.)
